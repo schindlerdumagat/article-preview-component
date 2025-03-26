@@ -1,34 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Article preview component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <title>Frontend Mentor | Article preview component</title>
 
-  <link rel="stylesheet" href="styles/stylesheets/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
 
-</head>
-<body>
+    <link rel="stylesheet" href="styles/stylesheets/main.css" />
+  </head>
+  <body>
+    <main>
+      <h1 class="sr-only">Sample Article Preview Component</h1>
+      <div class="card">
+        <img
+          class="card__img"
+          src="./images/drawers.jpg"
+          alt="Green drawer that has items on top such as a vase with a plant and a picture frame"
+        />
+        <div class="card__content">
+          <div class="card__text">
+            <h2 class="card__title">
+              Shift the overall look and feel by adding these wonderful touches
+              to furniture in your home
+            </h2>
+            <p class="card__description">
+              Ever been in a room and felt like something was missing? Perhaps
+              it felt slightly bare and uninviting. I’ve got some simple tips to
+              help you make any room feel complete.
+            </p>
+          </div>
+          <div class="card__profile-container">
+            <div class="card__profile">
+              <img
+                class="card__profile-avatar"
+                src="./images/avatar-michelle.jpg"
+                alt=""
+              />
+              <div class="card__profile-details">
+                <p class="card__profile-name">Michelle Appleton</p>
+                <time datetime="2022-07-28">28 Jun 2020</time>
+              </div>
+            </div>
+            <div class="card__share hidden">
+              <p class="card__share-text">share</p>
+              <div class="card__share-links">
+                <a class="card__share-link" href="#"
+                  ><img
+                    class="card__share-logo"
+                    src="./images/icon-facebook.svg"
+                    alt=""
+                /></a>
+                <a class="card__share-link" href="#"
+                  ><img
+                    class="card__share-logo"
+                    src="./images/icon-twitter.svg"
+                    alt=""
+                /></a>
+                <a class="card__share-link" href="#"
+                  ><img
+                    class="card__share-logo"
+                    src="./images/icon-pinterest.svg"
+                    alt=""
+                /></a>
+              </div>
+            </div>
+            <button class="card__btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13">
+                <path
+                  fill="#6E8098"
+                  d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
 
-  Shift the overall look and feel by adding these wonderful 
-  touches to furniture in your home
-
-  Ever been in a room and felt like something was missing? Perhaps 
-  it felt slightly bare and uninviting. I’ve got some simple tips 
-  to help you make any room feel complete.
-
-  Michelle Appleton
-  28 Jun 2020
-
-  Share
-
-  <script src="scripts/main.js"></script>
-</body>
+    <script src="scripts/main.js"></script>
+  </body>
 </html>

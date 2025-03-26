@@ -1,2 +1,107 @@
-@use 'reset';
-@use 'variables';
+@use 'reset' as *;
+@use 'variables' as *;
+
+body {
+    display: grid;
+    place-items: center;
+    background-color: $light-grayish-blue;
+    color: $desaturated-dark-blue;
+    font-family: $ff-main;
+    font-size: $fs-body;
+    letter-spacing: 0.12em;
+    font-weight: 500;
+    padding: $space-300;
+}
+
+.card {
+    background-color: $white;
+    border-radius: 10px;
+    box-shadow: $shadow;
+
+    &__img {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+        object-position: 50% 20%;
+        margin-bottom: $space-400;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: $space-300;
+        padding: 0 1.875rem;
+        margin-bottom: $space-600;
+    }
+
+    &__title {
+        color: $very-dark-grayish-blue;
+        font-size: $fs-title;
+        font-weight: 700;
+        line-height: 1.3;
+        letter-spacing: 0.0125em;
+    }
+
+    &__profile-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1.875rem 1.125rem;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    &__profile {
+        display: flex;
+        align-items: center;
+        gap: $space-200;
+    }
+
+    &__profile-avatar {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 9999px;
+    }
+
+    &__profile-name {
+        font-weight: 700;
+        color: $very-dark-grayish-blue;
+    }
+
+    &__btn {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 9999px;
+        border: transparent;
+        cursor: pointer;
+    }
+
+    &__share-icon {
+        display: inline-block;
+        margin: 0 auto;
+    }
+
+    &__share {
+        display: flex;
+        align-items: center;
+        border-bottom-left-radius: inherit;
+        border-bottom-right-radius: inherit;
+    }
+
+    &__share-text {
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        margin-right: $space-300;
+    }    
+
+    &__share-links {
+        display: flex;
+        gap: $space-200;
+    }
+
+}
+
+.hidden {
+    display: none;
+}
