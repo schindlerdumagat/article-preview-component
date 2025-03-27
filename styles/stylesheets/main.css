@@ -96,6 +96,20 @@ body {
   border-radius: 10px;
   box-shadow: 0px 40px 40px -10px rgba(201, 213, 225, 0.5);
 }
+@media screen and (min-width: 48rem) {
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 1.65fr;
+    max-width: 38rem;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 90rem) {
+  .card {
+    grid-template-columns: 1fr 1.56fr;
+    max-width: 45.625rem;
+  }
+}
 .card__img {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -105,12 +119,35 @@ body {
   object-position: 50% 20%;
   margin-bottom: 2rem;
 }
+@media screen and (min-width: 48rem) {
+  .card__img {
+    height: 100%;
+    object-fit: fill;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 10px;
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .card__content {
+    padding: 2.5rem 2.25rem 2.5rem 2rem;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .card__content {
+    padding: 1.875rem 2.5rem;
+  }
+}
 .card__text {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   padding: 0 1.875rem;
-  margin-bottom: 3rem;
+}
+@media screen and (min-width: 48rem) {
+  .card__text {
+    padding: 0;
+  }
 }
 .card__title {
   color: #48556a;
@@ -122,14 +159,26 @@ body {
 .card__profile-container {
   display: flex;
   justify-content: space-between;
-  padding: 0 1.875rem 1.125rem;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  margin-top: 3rem;
+}
+@media screen and (min-width: 48rem) {
+  .card__profile-container {
+    margin-top: 1.5rem;
+  }
 }
 .card__profile {
   display: flex;
   align-items: center;
   gap: 1rem;
+  padding: 0 1.875rem 1.125rem;
+  width: 100%;
+}
+@media screen and (min-width: 48rem) {
+  .card__profile {
+    padding: 0;
+  }
 }
 .card__profile-avatar {
   width: 2rem;
@@ -146,6 +195,47 @@ body {
   border-radius: 9999px;
   border: transparent;
   cursor: pointer;
+  margin-left: auto;
+  background-color: #ecf2f8;
+}
+.card__btn path {
+  fill: #6d7f97;
+}
+@media screen and (min-width: 48rem) {
+  .card__btn {
+    display: none;
+  }
+}
+.card__btn--md {
+  display: none;
+}
+@media screen and (min-width: 48rem) {
+  .card__btn--md {
+    position: relative;
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 9999px;
+    border: transparent;
+    cursor: pointer;
+    margin-left: auto;
+    background-color: #ecf2f8;
+  }
+  .card__btn--md path {
+    fill: #6d7f97;
+  }
+  .card__btn--md:hover {
+    background-color: #6d7f97;
+  }
+  .card__btn--md:hover path {
+    fill: #FFFFFF;
+  }
+}
+.card__btn--dark {
+  background-color: #6d7f97;
+}
+.card__btn--dark path {
+  fill: #FFFFFF;
 }
 .card__share-icon {
   display: inline-block;
@@ -156,15 +246,58 @@ body {
   align-items: center;
   border-bottom-left-radius: inherit;
   border-bottom-right-radius: inherit;
+  width: 100%;
+}
+@media screen and (min-width: 48rem) {
+  .card__share {
+    display: none;
+  }
 }
 .card__share-text {
   text-transform: uppercase;
   letter-spacing: 0.25em;
   margin-right: 1.5rem;
+  color: #6d7f97;
 }
 .card__share-links {
   display: flex;
   gap: 1rem;
+}
+.card__share-logo {
+  display: inline-block;
+  vertical-align: middle;
+}
+.card__tooltip {
+  display: flex;
+  padding: 1.125rem 2.375rem;
+  width: 248px;
+  height: 55px;
+  background-color: #48556a;
+  border-radius: 6px;
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: -150%;
+  margin-left: -60px;
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.card__tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #48556a transparent transparent transparent;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
 }
 
 .hidden {

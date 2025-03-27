@@ -18,6 +18,18 @@ body {
     border-radius: 10px;
     box-shadow: $shadow;
 
+    @media screen and (min-width: 48rem) {
+        display: grid;
+        grid-template-columns: 1fr 1.65fr;
+        max-width: 38rem;
+        width: 100%;
+    }
+
+    @media screen and (min-width: 90rem) {
+        grid-template-columns: 1fr 1.56fr;
+        max-width: 45.625rem;
+    }
+
     &__img {
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
@@ -26,6 +38,24 @@ body {
         object-fit: cover;
         object-position: 50% 20%;
         margin-bottom: $space-400;
+
+        @media screen and (min-width: 48rem) {
+            height: 100%;
+            object-fit: fill;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 10px;
+            margin-bottom: $space-0;
+        }
+    }
+
+    &__content {
+        @media screen and (min-width: 48rem) {
+            padding: $space-500 2.25rem $space-500 $space-400;
+        }
+        
+        @media screen and (min-width: 48rem) {
+            padding: 1.875rem $space-500;
+        }   
     }
 
     &__text {
@@ -33,7 +63,10 @@ body {
         flex-direction: column;
         gap: $space-300;
         padding: 0 1.875rem;
-        margin-bottom: $space-600;
+
+        @media screen and (min-width: 48rem) {
+            padding: 0;
+        }
     }
 
     &__title {
@@ -47,15 +80,25 @@ body {
     &__profile-container {
         display: flex;
         justify-content: space-between;
-        padding: 0 1.875rem 1.125rem;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
+        margin-top: $space-600;
+
+        @media screen and (min-width: 48rem) {
+            margin-top: $space-300;
+        }
     }
 
     &__profile {
         display: flex;
         align-items: center;
         gap: $space-200;
+        padding: 0 1.875rem 1.125rem;
+        width: 100%;
+
+        @media screen and (min-width: 48rem) {
+            padding: 0;
+        }
     }
 
     &__profile-avatar {
@@ -75,6 +118,55 @@ body {
         border-radius: 9999px;
         border: transparent;
         cursor: pointer;
+        margin-left: auto;
+        background-color: $light-grayish-blue;
+        
+        & path {
+            fill: $desaturated-dark-blue; // #6E8098
+        }
+
+        @media screen and (min-width: 48rem) {
+            display: none;
+        }
+    }
+
+    &__btn--md {
+        display: none;
+    }
+
+    @media screen and (min-width: 48rem) {
+        &__btn--md {
+            position: relative;
+            display: block;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 9999px;
+            border: transparent;
+            cursor: pointer;
+            margin-left: auto;
+            background-color: $light-grayish-blue;
+
+            & path {
+                fill: $desaturated-dark-blue;
+            }
+
+            &:hover {
+                background-color: $desaturated-dark-blue;
+
+                & path {
+                    fill: $white;
+                }
+            }
+        }
+    }
+
+
+    &__btn--dark {
+        background-color: $desaturated-dark-blue;
+
+        & path {
+            fill: $white;
+        }
     }
 
     &__share-icon {
@@ -87,12 +179,18 @@ body {
         align-items: center;
         border-bottom-left-radius: inherit;
         border-bottom-right-radius: inherit;
+        width: 100%;
+
+        @media screen and (min-width: 48rem) {
+            display: none;
+        }
     }
 
     &__share-text {
         text-transform: uppercase;
         letter-spacing: 0.25em;
         margin-right: $space-300;
+        color: $desaturated-dark-blue;
     }    
 
     &__share-links {
@@ -100,6 +198,47 @@ body {
         gap: $space-200;
     }
 
+    &__share-logo {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &__tooltip {
+        display: flex;
+        padding: 1.125rem 2.375rem;
+        width: 248px;
+        height: 55px;
+        background-color: $very-dark-grayish-blue;
+        border-radius: 6px;
+
+        /* Position the tooltip text */
+        position: absolute;
+        z-index: 1;
+        bottom: 150%;
+        left: -150%;
+        margin-left: -60px;
+
+        /* Fade in tooltip */
+        opacity: 0;
+        transition: opacity 0.3s;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: $very-dark-grayish-blue transparent transparent transparent;
+        }
+    }
+
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
 }
 
 .hidden {
