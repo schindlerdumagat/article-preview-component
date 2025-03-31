@@ -58,8 +58,14 @@
                 >
               </div>
             </div>
-            <button class="card__btn">
+            <button
+              class="card__btn"
+              aria-label="Share toggle"
+              aria-haspopup="dialog"
+            >
               <svg
+                aria-hidden="true"
+                focusable="false"
                 class="card__btn-icon"
                 xmlns="http://www.w3.org/2000/svg"
                 width="15"
@@ -74,26 +80,35 @@
               <div class="card__share-toast">
                 <h3 class="card__share-text">share</h3>
                 <ul class="card__socials">
-                  <li class="social-item">
-                    <a class="social-links" href="#"
+                  <li class="card__social-item">
+                    <a
+                      class="card__social-links"
+                      href="#"
+                      aria-label="Go to facebook"
                       ><img
-                        class="social-icons"
+                        class="card__social-icons"
                         src="images/icon-facebook.svg"
                         alt=""
                     /></a>
                   </li>
-                  <li class="social-item">
-                    <a class="social-links" href="#"
+                  <li class="card__social-item">
+                    <a
+                      class="card__social-links"
+                      href="#"
+                      aria-label="Go to twitter"
                       ><img
-                        class="social-icons"
+                        class="card__social-icons"
                         src="images/icon-twitter.svg"
                         alt=""
                     /></a>
                   </li>
-                  <li class="social-item">
-                    <a class="social-links" href="#"
+                  <li class="card__social-item">
+                    <a
+                      class="card__social-links"
+                      href="#"
+                      aria-label="Go to pinterest"
                       ><img
-                        class="social-icons"
+                        class="card__social-icons"
                         src="images/icon-pinterest.svg"
                         alt=""
                     /></a>
