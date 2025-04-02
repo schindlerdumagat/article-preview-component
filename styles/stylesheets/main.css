@@ -151,11 +151,11 @@ main {
 .card__btn > svg > path {
   fill: #6E8098;
 }
-.card__btn:is(:hover, :focus) {
+.card__btn:is(:hover, :focus-visible) {
   cursor: pointer;
   background-color: #6E8098;
 }
-.card__btn:is(:hover, :focus) > svg > path {
+.card__btn:is(:hover, :focus-visible) > svg > path {
   fill: #FFFFFF;
 }
 .card__btn--active {

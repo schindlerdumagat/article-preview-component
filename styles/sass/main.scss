@@ -82,7 +82,7 @@ main {
             fill: $grey-500;
         }
 
-        &:is(:hover, :focus) {
+        &:is(:hover, :focus-visible) {
             cursor: pointer;
             background-color: $grey-500;
 
