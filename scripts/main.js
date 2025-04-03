@@ -10,3 +10,12 @@ cardButton.addEventListener("click", () => {
         cardButton.classList.remove('card__btn--active');
     }
 })
+
+document.addEventListener('keydown', (e) => {
+    e.key === 'Escape' && shareDialog.close();
+
+    if (e.key === 'Escape') {
+        shareDialog.close();
+        cardButton.classList.remove('card__btn--active');
+    }
+})
