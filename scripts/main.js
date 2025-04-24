@@ -12,7 +12,6 @@ cardButton.addEventListener("click", () => {
 })
 
 document.addEventListener('keydown', (e) => {
-    e.key === 'Escape' && shareDialog.close();
 
     if (e.key === 'Escape') {
         shareDialog.close();
