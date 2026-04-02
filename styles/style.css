@@ -1,0 +1,302 @@
+/* CSS RESETS */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100dvh;
+  line-height: 1.4;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, button {
+  line-height: 1.3;
+}
+
+/* Balance text wrapping on headings */
+h1, h2 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* FONTS */
+
+/* manrope-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../assets/fonts/manrope-v20-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* manrope-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../assets/fonts/manrope-v20-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* CUSTOM VARIABLES */
+
+:root {
+
+    /* COLORS */
+
+    --clr-white: hsl(0, 100%, 100%);
+    --clr-grey-900: hsl(217, 19%, 35%);
+    --clr-grey-500: hsl(214, 17%, 51%);
+    --clr-grey-400: hsl(212, 23%, 69%);
+    --clr-grey-200: hsl(210, 46%, 95%);
+
+    /* TYPOGRAPHY */
+
+    --ff-main: "Manrope", sans-serif;
+    --fs-heading: 1.25rem;
+    --fs-body: .8125rem;
+
+    /* SPACINGS */
+
+    --space-0: 0rem;
+    --space-200: 1rem;
+    --space-300: 1.5rem;
+    --space-400: 2rem;
+    --space-500: 2.5rem;
+    --space-600: 3rem;
+    --space-700: 3.5rem;
+    --space-800: 4rem;
+    --space-1300: 6.5rem;
+    --space-2000: 10rem; 
+
+    /* BORDER RADIUS */
+
+    --rounded-sm: 10px;
+
+    /* BOX SHADOW */
+
+    --shadow: 0px 40px 40px -10px hsla(210, 29%, 84%, 0.5);
+
+    /* BUTTONS */
+
+    --btn-width: 32px;
+    --btn-height: 32px;
+
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-inline: var(--space-300);
+  padding-block: var(--space-800);
+  font-family: var(--ff-main);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  color: var(--clr-grey-500);
+  background-color: var(--clr-grey-200);
+}
+
+.card {
+  position: relative;
+  background-color: var(--clr-white);
+  border-radius: var(--rounded-sm);
+  box-shadow: var(--shadow);
+}
+
+.card__banner {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: top;
+  aspect-ratio: 1.5;
+  border-radius: inherit;
+}
+
+.card__text {
+  padding-block-start: var(--space-400);
+  padding-inline: 1.875rem;
+  padding-block-end: 1.875rem;
+}
+
+.card__title {
+    font-size: var(--fs-heading);
+    font-weight: 700;
+    color: var(--clr-grey-900);
+    margin-block-end: var(--space-300);
+}
+
+.card__profile {
+  position: relative;
+  padding-block: 1.125rem;
+  padding-inline: 1.875rem;
+}
+
+.card__profile-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-200);
+}
+
+.card__profile-avatar {
+  border-radius: 50%;
+}
+
+.card__profile-name {
+  font-weight: 700;
+  color: var(--clr-grey-900);
+}
+
+.card__date {
+  color: var(--clr-grey-400);
+}
+
+.card__btn {
+  position: absolute;
+  right: var(--space-400);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--btn-width);
+  height: var(--btn-height);
+  border: 1px solid var(--clr-grey-200);
+  border-radius: 50%;
+  background-color: var(--clr-grey-200);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.card__btn:hover {
+  background-color: var(--clr-grey-500);
+}
+
+.card__btn:hover path {
+  fill: var(--clr-white)
+}
+
+.share {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--clr-grey-900);
+  border: 1px solid var(--clr-grey-900);
+  border-bottom-left-radius: var(--rounded-sm);
+  border-bottom-right-radius: var(--rounded-sm);
+}
+
+.share__layout {
+  display: flex;
+  align-items: center;
+  gap: var(--space-300);
+  padding-inline: var(--space-400);
+  height: 100%;
+}
+
+.share__title {
+  font-size: var(--fs-body);
+  font-weight: 500;
+  color: var(--clr-grey-400);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.share__links {
+  display: flex;
+  gap: var(--space-200);
+}
+
+.share__link-icon > svg {
+  color: red;
+}
+
+@media screen and (min-width: 48rem) {
+
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    max-width: clamp(38rem, 29.2857rem + 18.1548vw, 45.625rem);
+  }
+
+  .card__banner {
+    height: 100%;
+  }
+
+  .card__content {
+    padding-block: clamp(var(--space-400), 3.0714rem + -1.1905vw, var(--space-500));
+    padding-inline: clamp(var(--space-400), 1.4286rem + 1.1905vw, var(--space-500));
+  }
+
+  .card__text {
+    padding: 0;
+    margin-block-end: var(--space-300);
+  }
+
+  .card__profile {
+    padding: 0;
+  }
+
+  .card__btn {
+    right: 0;
+  }
+
+  .share {
+    inset: unset;
+    top: -60px;
+    right: -95px;
+    border-radius: var(--rounded-sm);
+    width: 15.5rem;
+  }
+
+  .share::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 12px solid transparent;
+    border-block-start: 12px solid var(--clr-grey-900);
+  }
+
+  .share__layout {
+    padding: 1.125rem 2.375rem;
+  }
+
+}

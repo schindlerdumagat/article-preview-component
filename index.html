@@ -4,31 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
   <title>Frontend Mentor | Article preview component</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  <link rel="preload" href="./assets/fonts/manrope-v20-latin-500.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="./assets/fonts/manrope-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="styles/stylesheets/main.css">
+  <link rel="stylesheet" href="./styles/style.css">
 
 </head>
 <body>
-
-  Shift the overall look and feel by adding these wonderful 
-  touches to furniture in your home
-
-  Ever been in a room and felt like something was missing? Perhaps 
-  it felt slightly bare and uninviting. I’ve got some simple tips 
-  to help you make any room feel complete.
-
-  Michelle Appleton
-  28 Jun 2020
-
-  Share
-
+  <main>
+    <div class="card">
+      <img class="card__banner" src="./assets/images/drawers.jpg" alt="A brown vase with brown flowers and a tabletop easel on top of a table" width="660" height="528">
+      <div class="card__content">
+        <div class="card__text">
+          <h1 class="card__title">Shift the overall look and feel by adding these wonderful touches to furniture in your home</h1>
+          <p class="card__description">Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I’ve got some simple tips to help you make any room feel complete.</p>
+        </div>
+        <div class="card__profile">
+          <div class="card__profile-content">
+            <img class="card__profile-avatar" src="./assets/images/avatar-michelle.jpg" alt="Michelle Appleton" width="40" height="40">
+            <div class="card__profile-details">
+              <p class="card__profile-name">Michelle Appleton</p>
+              <time class="card__date" datetime="2020-06-28">28 Jun 2020</time>
+            </div>
+            <button class="card__btn" type="button"><svg class="card__btn-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="13"><path fill="#6E8098" d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"/></svg></button>
+          </div>
+          <dialog class="share">
+            <div class="share__layout">
+              <h2 class="share__title">share</h2>
+              <ul class="share__links" role="list">
+                <li class="share__link-item"><a href="https://www.facebook.com/"><img class="share__link-icon" src="assets/images/icon-facebook.svg" alt="Share to Facebook"></a></li>
+                <li class="share__link-item"><a href="https://x.com/"><img class="share__link-icon" src="assets/images/icon-twitter.svg" alt="Share to Twitter"></a></li>
+                <li class="share__link-item"><a href="https://www.pinterest.com/"><img class="share__link-icon" src="assets/images/icon-pinterest.svg" alt="Share to Pinterest"></a></li>
+              </ul>
+            </div>
+          </dialog>
+        </div>
+      </div>
+    </div>
+  </main>
   <script src="scripts/main.js"></script>
 </body>
 </html>
