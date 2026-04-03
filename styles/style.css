@@ -55,6 +55,17 @@ button {
   font-size: inherit;
 }
 
+/* Screeen Reader Only */
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
 /* FONTS */
 
 /* manrope-500 - latin */
@@ -102,8 +113,12 @@ button {
     --space-600: 3rem;
     --space-700: 3.5rem;
     --space-800: 4rem;
+    --space-1000: 5rem;
     --space-1300: 6.5rem;
-    --space-2000: 10rem; 
+    --space-2000: 10rem;
+
+    --space-fluid-tab-desk-400-500: clamp(2rem, 1.4286rem + 1.1905vw, 2.5rem);
+    --space-fluid-tab-desk-500-400: clamp(2rem, 3.0714rem + -1.1905vw, 2.5rem);
 
     /* BORDER RADIUS */
 
@@ -135,15 +150,17 @@ body {
 
 .card {
   position: relative;
+  max-width: 20.4375rem;
   background-color: var(--clr-white);
   border-radius: var(--rounded-sm);
+  box-shadow: var(--shadow);
 }
 
 .card__banner {
   object-fit: cover;
-  aspect-ratio: 1.5;
   object-position: top;
-  height: auto;
+  height: 100%;
+  width: 100%;
   border-start-start-radius: inherit;
   border-start-end-radius: inherit;
 }
@@ -152,9 +169,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: var(--space-300);
-  padding-inline: clamp(var(--space-400), 1.4286rem + 1.1905vw, var(--space-500));
-  padding-block-start: clamp(var(--space-400), 1.5229rem + 2.0356vw, var(--space-500));
-  padding-block-end: var(--space-200);
+  padding: var(--space-400) var(--space-400) var(--space-200);
 }
 
 .card__title {
@@ -184,7 +199,6 @@ body {
 }
 
 .profile__btn {
-  display: inline-block;
   margin-inline-start: auto;
   width: var(--btn-width);
   height: var(--btn-height);
@@ -192,10 +206,13 @@ body {
   border: 2px solid var(--clr-grey-200);
   border-radius: 50%;
   z-index: 1;
+  transition: background-color 200ms ease, border-color 200ms ease;
+  cursor: pointer;
 }
 
 .profile__btn path {
   fill: var(--clr-grey-500);
+  transition: fill 200ms ease;
 }
 
 .profile__btn--open {
@@ -225,21 +242,27 @@ body {
   fill: var(--clr-grey-500);
 }
 
+.profile__btn:focus-visible {
+  outline: 2px solid var(--clr-grey-500);
+  outline-offset: 2px;
+}
+
 .share {
+  display: none;
   position: absolute;
   bottom: 0;
+  left: 0;
   max-height: 4.75rem;
   height: 100%;
   width: 100%;
-  padding-inline: clamp(var(--space-400), 1.5229rem + 2.0356vw, var(--space-500));
-  padding-block: clamp(var(--space-200), 1.9771rem + -2.0356vw, var(--space-300));
+  padding-inline: var(--space-400);
+  padding-block: var(--space-300);
   background-color: var(--clr-grey-900);
-  border: transparent;
   border-end-start-radius: var(--rounded-sm);
   border-end-end-radius: var(--rounded-sm);
 }
 
-.share:open {
+.share[data-open] {
   display: flex;
   align-items: center;
   gap: var(--space-300);
@@ -268,14 +291,14 @@ body {
   }
 
   .card__banner {
-    height: 100%;
     border-start-end-radius: unset;
     border-start-start-radius: inherit;
     border-end-start-radius: inherit;
   }
 
   .card__content {
-    padding-block-end: var(--space-500);
+    padding-inline: var(--space-fluid-tab-desk-400-500);
+    padding-block: var(--space-fluid-tab-desk-500-400);
   }
 
   .profile {
@@ -284,10 +307,11 @@ body {
   }
 
   .share {
-    bottom: unset;
+    bottom: 100%;
+    right: 0;
     left: unset;
-    top: -4.8rem;
-    right: -110px;
+    transform: translateX(44%);
+    margin-bottom: var(--space-300);
     height: auto;
     max-width: 15.5rem;
     border-radius: var(--rounded-sm);
